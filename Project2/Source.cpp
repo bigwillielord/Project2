@@ -1,125 +1,120 @@
 #include <iostream>
 #include <Windows.h>
 
-int main()
-{
-	SetConsoleCP(CP_UTF8);
-	SetConsoleOutputCP(CP_UTF8);
-	srand(time(NULL));
+int main() {
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
 
-	int apple = 0, orange = 0, abrikos = 0, grusha = 0;
-	int tomato = 0, onion = 0, cucumber = 0;
-	int chesnok_tea = 0, petryshi_tea = 0;
+    int apple = 0, orange = 0, abrikos = 0, grusha = 0;
+    int tomato = 0, onion = 0, cucumber = 0;
+    int chesnok_tea = 0, petrushevy_tea = 0;
 
-	const int price_fruit = 100;
-	const int price_veg = 80;
-	const int price_tea = 120;
-	const int XXX = 1000;
+    const int PRICE_FRUIT = 100;
+    const int PRICE_VEG = 80;
+    const int PRICE_TEA = 120;
+    const int XXX = 1000;
 
-	int choose = 0;
+    int choose = 0;
 
-	while (true)
-	{
-		system("cls");
-		std::cout << "\n\n\n\t\t Магазин \"Соки Александра\"\n\n\n";
-		std::cout << "1 - Начать покупки\n";
-		std::cout << "2 - Корзина и чек\n";
-		std::cout << "3 - Выход\n";
-		std::cout << "Ввод: ";
-			std::cin >> choose;
-		if (choose == 1)
-		{
-			system("cls");
-			std::cout << "\n\n\n\t\tВыберете категорию товаров\n\n\n";
-			std::cout << "1 - Фруктовые соки\n";
-			std::cout << "2 - Овощные соки\n";
-			std::cout << "3 - Чаи";
-				std::cout << "0 - Выход в меню\n\n";
-			std::cout << "Ввод: ";
-			std::cin >> choose;
+    while (true) {
+        system("cls");
+        std::cout << "\n\n\n\t\tМагазин \"Соки Александра\"\n\n\n";
+        std::cout << "1 - Начать покупки\n";
+        std::cout << "2 - Корзина и чек\n";
+        std::cout << "0 - Выход\n";
+        std::cin >> choose;
 
-			if (choose == 1)
-			{
-				system("cls");
-				std::cout << "--- Фруктовые соки ---\n";
-				std::cout << "1 - Яблочный\n2 - Апельсиновый\n3 - Абрикосовый\n4 - Грушевый\n";
-				std::cout << "Ввод: ";
-					std::cin >> choose;
+        if (choose == 1) {
+            system("cls");
+            std::cout << "\n\n\n\t\tВыберите категорию товаров\n\n\n";
+            std::cout << "1 - Фруктовые соки\n";
+            std::cout << "2 - Овощные соки\n";
+            std::cout << "3 - Чаи\n";
+            std::cout << "0 - Выход в меню\n";
+            std::cin >> choose;
 
-				int liters = 0;
-				std::cout << "Количество (в литрах): ";
-				std::cin >> liters;
+            if (choose == 1) {
+                system("cls");
+                std::cout << "--- Фруктовые соки ---\n";
+                std::cout << "1 - Яблочный\n2 - Апельсиновый\n3 - Абрикосовый\n4 - Грушевый\n";
+                std::cin >> choose;
 
-				if (choose == 1) apple += liters;
-				else if (choose == 2) orange += liters;
-				else if (choose == 3) abrikos += liters;
-				else if (choose == 4) grusha += liters;
-			}
-			else if (choose == 2) {
-				system("cls");
-				std::cout << "--- Овощные соки ---\n";
-				std::cout << "1 - Томатный\n2 - Луковый\n3 - Огуречный\n";
-				std::cout << "Ввод: ";
-				std::cin >> choose;
+                int liters = 0;
+                std::cout << "Количество (в литрах): ";
+                std::cin >> liters;
 
-				int liters = 0;
-				std::cout << "Количество (в литрах): ";
-				std::cin >> liters;
+                if (choose == 1) apple += liters;
+                else if (choose == 2) orange += liters;
+                else if (choose == 3) abrikos += liters;
+                else if (choose == 4) grusha += liters;
+            }
+            else if (choose == 2) {
+                system("cls");
+                std::cout << "--- Овощные соки ---\n";
+                std::cout << "1 - Томатный\n2 - Луковый\n3 - Огуречный\n";
+                std::cin >> choose;
 
-				if (choose == 1) tomato += liters;
-				else if (choose == 2) onion += liters;
-				else if (choose == 3) cucumber += liters;
-			}
-			else if (choose == 3) {
-				system("cls");
-				std::cout << "--- Чаи ---\n";
-				std::cout << "1 - Чесночный\n2 - Петрушевый\n";
-				std::cout << "Ввод: ";
-				std::cin >> choose;
+                int liters = 0;
+                std::cout << "Количество (в литрах): ";
+                std::cin >> liters;
 
-				int liters = 0;
-				std::cout << "Количество (в литрах): ";
-				std::cin >> liters;
+                if (choose == 1) tomato += liters;
+                else if (choose == 2) onion += liters;
+                else if (choose == 3) cucumber += liters;
+            }
+            else if (choose == 3) {
+                system("cls");
+                std::cout << "--- Чаи ---\n";
+                std::cout << "1 - Чесночный\n2 - Петрушевый\n";
+                std::cin >> choose;
 
+                int liters = 0;
+                std::cout << "Количество (в литрах): ";
+                std::cin >> liters;
 
-				if (choose == 1) chesnok_tea += liters;
-				else if (choose == 2) petryshi_tea += liters;
-			}
-		}
-		else if (choose == 2) {
-			system("cls");
-			std::cout << "=== Ваш чек ===\n\n";
+                if (choose == 1) chesnok_tea += liters;
+                else if (choose == 2) petrushevy_tea += liters;
+            }
+        }
+        else if (choose == 2) {
+            system("cls");
+            std::cout << "=== Ваш чек ===\n\n";
 
-			int paid_onion = onion - (onion / 4);
+            int paid_onion = onion - (onion / 4);
 
-			double sum = (apple + orange + abrikos + grusha) * price_fruit
-				+ (tomato + cucumber) * price_veg
-				+ paid_onion * price_veg
-				+ chesnok_tea * price_tea;
-		}
-		double petryshi_cost = petryshi_tea * price_tea;
-		if (petryshi_cost >= 3) {
-			petryshi_cost *= 0.95;
-			std::cout << "Скидка 5% на петрушевый чай применена!";
+            double sum = (apple + orange + abrikos + grusha) * PRICE_FRUIT
+                + (tomato + cucumber) * PRICE_VEG
+                + paid_onion * PRICE_VEG
+                + chesnok_tea * PRICE_TEA;
 
-		}
+            double petrushevy_cost = petrushevy_tea * PRICE_TEA;
+            if (petrushevy_tea >= 3) {
+                petrushevy_cost *= 0.95;
+                std::cout << "* Скидка 5% на петрушевый чай применена!\n";
+            }
+            sum += petrushevy_cost;
 
+            std::cout << "Сумма без общей скидки: " << sum << " руб.\n";
 
+            if (sum > XXX) {
+                sum *= 0.87;
+                std::cout << "* Скидка 13% на весь чек применена!\n";
+            }
 
-	}
+            if (onion >= 4) {
+                std::cout << "* Бесплатных литров лукового сока: " << onion / 4 << " л.\n";
+            }
 
+            std::cout << "\nИтого к оплате: " << sum << " руб.\n\n";
+            system("pause");
+        }
+        else if (choose == 0) {
+            break;
+        }
+    }
 
-
-
-
-
-
-
-
-	return 0;
+    return 0;
 }
-
-
 
 /*	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
@@ -408,41 +403,4 @@ int main()
 			std::cout << "\nНекорректный ввод\n";
 			Sleep(1500);
 		}
-	}*/
-
-	/*	double a = 0, b = 0, c = 0, d = 0, x1 = 0, x2 = 0;
-
-		std::cout << "Решение полниго квадратного уравнения\n\n";
-		std::cout << "ax^2 + bx + c = 0\n\n";
-		std::cout << "Введите А: ";
-		std::cin >> a;
-		std::cout << "Введите B: ";
-		std::cin >> b;
-		std::cout << "Введите C: ";
-		std::cin >> c;
-
-		std::cout << "\n" << a << "x^2 + " << b << "x + " << c << " = 0\n\n";
-
-		d = std::pow(b, 2) - 4 * a * c;
-
-		std::cout << "\nДискриминант: " << d << "\n\n";
-
-		if (d < 0)
-		{
-			std::cout << "Нет корней\n";
-		}
-		else if (d == 0)
-		{
-			x1 = -b / (2 * a);
-			std::cout << "Один корень: " << x1 << "\n\n";
-		}
-		else
-		{
-			x1 = (-b + std::sqrt(b)) / (2 * a);
-			x2 = (-b - std::sqrt(b)) / (2 * a);
-			std::cout << "Первый корень: " << x1 << "\n\n";
-			std::cout << "Второй корень: " << x2 << "\n\n";
-		}
-
-		return 0;
 	}*/

@@ -1,6 +1,54 @@
 #include <iostream>
 #include <Windows.h>
 
+void F00(int *num)
+{
+	*num += 3;
+}
+
+
+
+int main() {
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+	srand(time(NULL));
+
+	/*int a = 5;
+	int b = 1;
+
+	int* ptr = &a;
+
+
+
+	std::cout << a << "\n";
+	std::cout << *ptr << "\n";
+	ptr = &b;
+	std::cout << ptr << "\n";
+	*/
+
+	/*int a = 5;
+
+	std::cout << a << "\n";
+	F00(&a);
+	std::cout << a << "\n";
+	return 0;
+	*/
+
+	/*int one = 5, two = 10;
+	std::cout << one << " " << two << "\n";
+	std::swap(one, two);
+	std::cout << one << " " << two << "\n";
+	*/
+
+	
+
+	return 0;
+}
+
+
+/* #include <iostream>
+#include <Windows.h>
+
 int main() {
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
@@ -115,6 +163,7 @@ int main() {
 
     return 0;
 }
+*/
 
 /*	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
